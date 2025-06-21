@@ -1,54 +1,36 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact – Huis van Architectuur</title>
-  <link rel="stylesheet" href="main.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Huis van Architectuur</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
+    <header>
+        <div class="logo">
+            <img src="images/Logo.png" alt="Logo Huis van Architectuur">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projecten</a></li>
+                <li><a href="about.html">Over ons</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <header>
-    <div class="container header-container">
-      <img src="images/Logo.jpg" alt="Logo Huis van Architectuur" class="logo" />
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="projects.html">Projecten</a></li>
-          <li><a href="about.html">Over ons</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <main>
+        <h1>Contact</h1>
+        <p>Neerbuul 24, 2250 Olen</p>
+        <p>+32 474 05 10 69</p>
+        <p><a href="mailto:jarvin.horemans@hotmail.com">jarvin.horemans@hotmail.com</a></p>
+        <p>BTW: BE 1005.441.820</p>
+    </main>
 
-  <main>
-    <section class="page-header container">
-      <h1>Contacteer ons</h1>
-      <p>Heb je een project in gedachten of een vraag? Laat het ons weten via onderstaand formulier.</p>
-    </section>
-
-    <section class="contact-form container">
-      <form action="https://formspree.io/f/yourFormID" method="POST">
-        <label for="name">Naam</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">E-mailadres</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="message">Bericht</label>
-        <textarea id="message" name="message" rows="6" required></textarea>
-
-        <button type="submit">Verstuur</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>© Huis van Architectuur – Jarvin Horemans – Olen</p>
-    </div>
-  </footer>
-
+    <footer>
+        &copy; Huis van Architectuur – Jarvin Horemans – Olen
+    </footer>
 </body>
 </html>
