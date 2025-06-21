@@ -3,24 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projecten - Huis van Architectuur</title>
-  <link rel="stylesheet" href="styles/main.css" />
+  <title>Projecten – Huis van Architectuur</title>
+  <link rel="stylesheet" href="main.css" />
 </head>
-<body class="dark">
+<body>
+
   <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="projects.html" class="active">Projecten</a>
-      <a href="about.html">Over ons</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <div class="container header-container">
+      <img src="images/Logo.jpg" alt="Logo Huis van Architectuur" class="logo" />
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html" class="active">Projecten</a></li>
+          <li><a href="about.html">Over ons</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
-  <section class="projects-grid">
-    <article class="project">
-      <img src="assets/images/Image1_000.jpg" alt="Woning met zwembad" />
-      <h2>Residentiële Woning – 2025</h2>
-      <p>Gelegen in Olen – moderne woonarchitectuur, met zachte baksteen en krachtige belijning.</p>
-    </article>
-  </section>
+
+  <main>
+    <section class="page-header container">
+      <h1>Projecten</h1>
+      <p>Een selectie van recente realisaties en concepten, telkens met oog voor context, duurzaamheid en detail.</p>
+    </section>
+
+    <section class="projects-gallery container">
+      <div class="project">
+        <img src="images/Image3.jpg" alt="Project 1" />
+        <h2>Woning aan de bosrand</h2>
+        <p>Een ingetogen, duurzame woning met natuurlijke materialen en zicht op het landschap.</p>
+      </div>
+
+      <div class="project">
+        <img src="images/Image4.jpg" alt="Project 2" />
+        <h2>Stadswoning met lichtpatio</h2>
+        <p>Compact maar ruimtelijk ontwerp voor een jong gezin in het centrum van Antwerpen.</p>
+      </div>
+
+      <div class="project">
+        <img src="images/Image5_000.jpg" alt="Project 3" />
+        <h2>Villa met zichtlijnen</h2>
+        <p>Strakke geometrie en uitgepuurde details in dialoog met de open omgeving.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© Huis van Architectuur – Jarvin Horemans – Olen</p>
+    </div>
+  </footer>
+
 </body>
 </html>
