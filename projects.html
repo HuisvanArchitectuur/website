@@ -1,36 +1,75 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projecten - Huis van Architectuur</title>
-    <link rel="stylesheet" href="main.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projecten - Huis van Architectuur</title>
+  <link rel="stylesheet" href="main.css" />
+  <style>
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem 0;
+    }
+
+    .project-card {
+      background-color: #111;
+      padding: 1rem;
+      border: 1px solid #333;
+      border-radius: 4px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: scale(1.02);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+
+    .project-title {
+      margin-top: 1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="images/Logo.png" alt="Logo Huis van Architectuur">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projecten</a></li>
-                <li><a href="about.html">Over ons</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <h1>Projecten</h1>
-        <p>Bekijk een selectie van onze recente projecten. Elk ontwerp vertelt zijn eigen verhaal, afgestemd op locatie en klant.</p>
-        <img src="images/Image1_000.jpg" alt="Project 1" style="max-width:100%; margin-top: 2rem;">
-        <img src="images/Image2.jpg" alt="Project 2" style="max-width:100%; margin-top: 2rem;">
-        <!-- Voeg gerust meer afbeeldingen toe -->
-    </main>
+  <header>
+    <div class="logo">
+      <img src="images/Logo.png" alt="Logo Huis van Architectuur" />
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" class="active">Projecten</a></li>
+        <li><a href="about.html">Over ons</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <footer>
-        &copy; Huis van Architectuur – Jarvin Horemans – Olen
-    </footer>
+  <main>
+    <h1>Onze projecten</h1>
+    <div class="project-grid">
+      <a href="projecten/project1.html" class="project-card">
+        <img src="projecten/images/project1_1.jpg" alt="Project 1">
+        <div class="project-title">Moderne eengezinswoning met zwembad</div>
+      </a>
+      <!-- toekomstige projecten kan je hier toevoegen -->
+    </div>
+  </main>
+
+  <footer>
+    &copy; Huis van Architectuur – Jarvin Horemans – Olen
+  </footer>
+
 </body>
 </html>
