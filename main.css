@@ -173,3 +173,46 @@ footer {
         padding: 2rem 1rem;
     }
 }
+.project-detail {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+.project-detail h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid #fff;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+.project-detail .subtitle {
+  font-size: 1.1rem;
+  color: #eee;
+  margin-bottom: 2.5rem;
+}
+.image-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.image-center img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.25);
+  border: 1px solid #333;
+  background: #111;
+  max-height: 600px;
+}
+@media (max-width: 1200px) {
+  .project-detail {
+    max-width: 99vw;
+    padding: 1rem 0.3rem;
+  }
+  .image-center img {
+    max-height: 300px;
+  }
+}
