@@ -5,17 +5,141 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projecten - Huis van Architectuur</title>
   <link rel="stylesheet" href="main.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 2rem;
+      background-color: #000;
+      border-bottom: 1px solid #333;
+    }
+
+    .logo img {
+      height: 80px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #888;
+    }
+
+    main {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    main h1 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid #fff;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+
+    .project-card {
+      background-color: #111;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      margin-top: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .project-card a {
+      color: inherit;
+      text-decoration: none;
+      display: block;
+    }
+
+    .project-thumb {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid #444;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-info h2 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    .project-info p {
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #111;
+      color: #aaa;
+      font-size: 0.9rem;
+      border-top: 1px solid #333;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .logo img {
+        height: 60px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <header class="main-header">
-    <a href="index.html" class="logo-link">
-      <img src="images/Logo.png" alt="Logo Huis van Architectuur" class="header-logo">
-    </a>
+  <header>
+    <div class="logo">
+      <img src="images/Logo.png" alt="Logo Huis van Architectuur" />
+    </div>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projecten</a></li>
+        <li><a href="projects.html" class="active">Projecten</a></li>
         <li><a href="about.html">Over ons</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -27,7 +151,7 @@
 
     <div class="project-card">
       <a href="projecten/project1.html">
-        <img src="images/project1_5.jpg" alt="Moderne woning met zwembad" class="project-thumb full-width" />
+        <img src="images/project1_5.jpg" alt="Moderne woning met zwembad" class="project-thumb" />
         <div class="project-info">
           <h2>Moderne eengezinswoning met zwembad</h2>
           <p>Een open bebouwing in moderne stijl, voorzien van een ruimtelijk interieur, geïntegreerd zwembad en poolhouse.</p>
