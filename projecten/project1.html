@@ -7,19 +7,30 @@
   <link rel="stylesheet" href="../main.css" />
   <style>
     main {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding: 3rem 1rem 2rem 1rem;
+      min-height: 100vh;
+    }
+    .project-content {
+      width: 100%;
+      max-width: 1100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #111;
+      border-radius: 14px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      margin-top: 2rem;
     }
     .project-title {
       text-align: center;
       font-size: 2rem;
       font-weight: bold;
       margin-bottom: 1rem;
-      margin-top: 2rem;
+      color: #fff;
     }
     .project-subtitle {
       text-align: center;
@@ -31,27 +42,27 @@
       display: flex;
       justify-content: center;
       width: 100%;
-      margin-bottom: 2.5rem;
     }
     .project-image img {
       max-width: 100%;
-      height: auto;
+      max-height: 600px;
       border-radius: 12px;
       box-shadow: 0 6px 32px rgba(0,0,0,0.25);
       border: 1px solid #333;
-      /* optioneel max hoogte */
-      max-height: 700px;
       object-fit: contain;
+      background: #111;
+      margin-bottom: 2rem;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
-    @media (max-width: 900px) {
-      main {
-        padding: 2rem 0.5rem;
-      }
-      .project-title {
-        font-size: 1.4rem;
+    @media (max-width: 1200px) {
+      .project-content {
+        max-width: 98vw;
+        padding: 1.5rem 0.5rem;
       }
       .project-image img {
-        max-height: 350px;
+        max-height: 300px;
       }
     }
   </style>
@@ -73,14 +84,16 @@
   </header>
 
   <main>
-    <div class="project-title">Moderne eengezinswoning met zwembad</div>
-    <div class="project-subtitle">
-      Open bebouwing met moderne lijnen, een helder interieur, zwembad en poolhouse. Subtiel geïntegreerd in zijn omgeving.
+    <div class="project-content">
+      <div class="project-title">Moderne eengezinswoning met zwembad</div>
+      <div class="project-subtitle">
+        Open bebouwing met moderne lijnen, een helder interieur, zwembad en poolhouse. Subtiel geïntegreerd in zijn omgeving.
+      </div>
+      <div class="project-image">
+        <img src="../images/project1_1.jpg" alt="Moderne eengezinswoning met zwembad" />
+      </div>
+      <!-- Voeg eventueel meer foto's toe -->
     </div>
-    <div class="project-image">
-      <img src="../images/project1_1.jpg" alt="Moderne eengezinswoning met zwembad" />
-    </div>
-    <!-- Voeg eventueel meer afbeeldingen of tekst toe -->
   </main>
 
   <footer>
