@@ -7,27 +7,36 @@
   <link rel="stylesheet" href="main.css" />
   <style>
     main {
-      padding: 4rem 2rem;
-      max-width: 1100px;
-      margin: auto;
+      padding: 4rem 2rem 2rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
       text-align: center;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid #fff;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+      margin-top: 0;
     }
     .projects-list {
       display: flex;
       flex-direction: column;
       gap: 3rem;
       align-items: center;
+      width: 100%;
     }
     .project-card {
       background-color: #111;
       border: 1px solid #333;
-      border-radius: 10px;
-      padding: 2.5rem 2rem 1.7rem 2rem;
+      border-radius: 14px;
+      padding: 2.3rem 2rem 1.3rem 2rem;
       width: 100%;
-      max-width: 650px;
+      max-width: 620px;
       margin: 0 auto;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
       transition: box-shadow 0.2s;
-      box-shadow: 0 4px 32px rgba(0,0,0,0.13);
     }
     .project-card a {
       color: inherit;
@@ -36,33 +45,35 @@
     }
     .project-thumb {
       width: 100%;
-      max-width: 620px;
+      max-width: 580px;
       height: auto;
-      border-radius: 10px;
+      border-radius: 12px;
       border: 1px solid #444;
-      margin-bottom: 1.4rem;
+      margin-bottom: 1.2rem;
       display: block;
       margin-left: auto;
       margin-right: auto;
-      transition: filter 0.2s;
+      box-shadow: 0 3px 24px rgba(0,0,0,0.13);
+      transition: filter 0.18s;
     }
     .project-info h2 {
-      font-size: 1.45rem;
+      font-size: 1.4rem;
       margin-bottom: 1rem;
       color: #fff;
       font-weight: bold;
     }
     .project-info p {
-      font-size: 1.09rem;
+      font-size: 1.1rem;
       color: #ccc;
+      margin-bottom: 0;
     }
     .project-card:hover .project-thumb {
-      filter: brightness(0.8);
+      filter: brightness(0.77);
     }
     @media (max-width: 768px) {
       main { padding: 2rem 0.5rem; }
       .project-card { padding: 1.1rem 0.5rem; }
-      .project-thumb { max-width: 99vw; }
+      .project-thumb { max-width: 97vw; }
     }
   </style>
 </head>
@@ -82,7 +93,7 @@
     </nav>
   </header>
 
-  <!-- Sticky nav, direct na de header -->
+  <!-- Sticky nav direct na de header -->
   <nav id="sticky-nav">
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -134,36 +145,36 @@
 
   <!-- Sticky nav script -->
   <script>
-  let lastScrollTop = 0;
-  let ticking = false;
-  window.addEventListener('scroll', function() {
-    if (!ticking) {
-      window.requestAnimationFrame(function() {
-        handleStickyNav();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  });
+    let lastScrollTop = 0;
+    let ticking = false;
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(function() {
+          handleStickyNav();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
 
-  function handleStickyNav() {
-    const stickyNav = document.getElementById('sticky-nav');
-    const mainHeader = document.getElementById('main-header') || document.querySelector('header');
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrollTop > 80) {
-      if (scrollTop < lastScrollTop) {
-        stickyNav.classList.add('show');
-        if(mainHeader) mainHeader.style.visibility = 'hidden';
+    function handleStickyNav() {
+      const stickyNav = document.getElementById('sticky-nav');
+      const mainHeader = document.getElementById('main-header') || document.querySelector('header');
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > 80) {
+        if (scrollTop < lastScrollTop) {
+          stickyNav.classList.add('show');
+          if(mainHeader) mainHeader.style.visibility = 'hidden';
+        } else {
+          stickyNav.classList.remove('show');
+          if(mainHeader) mainHeader.style.visibility = 'hidden';
+        }
       } else {
         stickyNav.classList.remove('show');
-        if(mainHeader) mainHeader.style.visibility = 'hidden';
+        if(mainHeader) mainHeader.style.visibility = 'visible';
       }
-    } else {
-      stickyNav.classList.remove('show');
-      if(mainHeader) mainHeader.style.visibility = 'visible';
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     }
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-  }
   </script>
 </body>
 </html>
