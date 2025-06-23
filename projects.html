@@ -16,9 +16,9 @@
     h1 {
       color: #fff;
       text-align: center;
-      font-size: 2.3rem;
+      font-size: 2.4rem;
       font-weight: bold;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
       margin-top: 1rem;
       border-bottom: 3px solid #fff;
       display: inline-block;
@@ -27,15 +27,15 @@
     }
     .project-list {
       width: 100%;
-      max-width: 950px;
+      max-width: 1100px;
       display: flex;
       flex-direction: column;
-      gap: 3rem;
+      gap: 3.2rem;
       align-items: center;
     }
     .project-card {
       width: 100%;
-      max-width: 800px;
+      max-width: 1050px;
       margin: 0 auto;
       text-align: center;
       padding: 0;
@@ -52,8 +52,9 @@
     }
     .project-thumb {
       width: 100%;
-      max-width: 750px;
-      border-radius: 14px;
+      max-width: 1040px;
+      max-height: 540px;
+      border-radius: 18px;
       box-shadow: 0 8px 36px rgba(0,0,0,0.19);
       border: 1px solid #333;
       margin-bottom: 1.3rem;
@@ -61,14 +62,15 @@
       margin-left: auto;
       margin-right: auto;
       transition: opacity 0.3s;
+      object-fit: cover;
     }
     .project-thumb-link:hover .project-thumb,
     .project-thumb-link:focus .project-thumb {
-      opacity: 0.62;
+      opacity: 0.63;
       cursor: pointer;
     }
     .project-title {
-      font-size: 1.4rem;
+      font-size: 1.45rem;
       font-weight: bold;
       color: #fff;
       margin-bottom: 0.4rem;
@@ -77,22 +79,22 @@
     }
     .project-desc {
       color: #ccc;
-      font-size: 1.07rem;
+      font-size: 1.10rem;
       text-align: center;
       margin-bottom: 0.2rem;
       margin-top: 0;
       line-height: 1.7;
       font-weight: 400;
     }
-    @media (max-width: 900px) {
+    @media (max-width: 1200px) {
       .project-card, .project-thumb {
-        max-width: 98vw;
+        max-width: 97vw;
       }
       .project-thumb {
-        max-height: 330px;
+        max-height: 240px;
       }
       h1 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
       }
     }
     /* Sticky mini-header */
@@ -183,10 +185,10 @@
         </div>
       </div>
 
-      <!-- Project 2 -->
+      <!-- Project 2 met afbeelding 2 als hoofdafbeelding -->
       <div class="project-card">
         <a href="projecten/project2.html" class="project-thumb-link">
-          <img src="images/project2_1.png" alt="Stijlvolle pastorijwoning" class="project-thumb" />
+          <img src="images/project2_2.png" alt="Stijlvolle pastorijwoning" class="project-thumb" />
         </a>
         <div class="project-title">Stijlvolle pastorijwoning</div>
         <div class="project-desc">
