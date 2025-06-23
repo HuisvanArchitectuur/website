@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project 3 – Huis van Architectuur</title>
+  <title>Strakke baksteenwoning met tijdloos karakter</title>
   <link rel="stylesheet" href="../main.css" />
   <style>
     main {
@@ -19,7 +19,7 @@
       padding: 2.5rem 2rem;
       background: #111;
       border-radius: 14px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.13);
       text-align: center;
     }
     .project-detail h1 {
@@ -47,10 +47,25 @@
       max-width: 100%;
       max-height: 600px;
       border-radius: 12px;
-      box-shadow: 0 6px 32px rgba(0,0,0,0.25);
+      box-shadow: 0 6px 32px rgba(0,0,0,0.21);
       border: 1px solid #333;
       background: #111;
       display: block;
+      transition: opacity 0.2s;
+    }
+    .image-center img:hover,
+    .image-center img:focus {
+      opacity: 0.65;
+      cursor: pointer;
+    }
+    .project-textblock {
+      font-size: 1.08rem;
+      color: #eee;
+      margin: 2.1rem auto 2.1rem auto;
+      max-width: 800px;
+      text-align: left;
+      line-height: 1.7;
+      font-weight: 400;
     }
     @media (max-width: 1200px) {
       .project-detail {
@@ -60,6 +75,52 @@
       .image-center img {
         max-height: 300px;
       }
+      .project-textblock {
+        font-size: 0.99rem;
+      }
+    }
+    /* Sticky mini-header */
+    .mini-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      background: rgba(15, 15, 15, 0.99);
+      border-bottom: 1px solid #333;
+      z-index: 1000;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0.8rem 2.2rem 0.8rem 2.2rem;
+      box-shadow: 0 2px 18px rgba(0,0,0,0.06);
+      transition: transform 0.24s;
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+    .mini-header.visible {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: all;
+    }
+    .mini-header nav ul {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+      margin: 0;
+    }
+    .mini-header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    .mini-header nav ul li a:hover,
+    .mini-header nav ul li a.active {
+      color: #aad5f4;
     }
   </style>
 </head>
@@ -79,24 +140,44 @@
     </nav>
   </header>
 
+  <!-- Sticky mini-header -->
+  <div class="mini-header" id="miniHeader">
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects.html" class="active">Projecten</a></li>
+        <li><a href="../about.html">Over ons</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
   <main>
     <div class="project-detail">
-      <h1>Project 3 – titel of korte omschrijving</h1>
+      <h1>Strakke baksteenwoning met tijdloos karakter</h1>
       <p class="subtitle">
-        Voeg hier een korte beschrijving toe van project 3.<br>
-        Bijvoorbeeld: Tijdloze moderne woning met aandacht voor detail, licht en ruimte.
+        Gezinswoning in baksteen, tijdloos en robuust, met maximaal comfort en connectie met de tuin.
       </p>
       <div class="image-center">
         <img src="../images/project3_1.png" alt="Project 3 afbeelding 1" />
       </div>
+      <div class="project-textblock">
+        Deze woning blinkt uit in eenvoud, robuustheid en heldere volumes. De bakstenen gevel geeft het huis een warme, solide uitstraling, terwijl grote raampartijen zorgen voor licht en een open verbinding met de tuin.
+      </div>
       <div class="image-center">
         <img src="../images/project3_2.png" alt="Project 3 afbeelding 2" />
+      </div>
+      <div class="project-textblock">
+        Binnen vind je open leefruimtes waar functionaliteit en gezelligheid centraal staan. De strakke lijnen en het minimalistische ontwerp creëren rust, ruimte en comfort – zonder franjes, maar mét aandacht voor elk detail.
       </div>
       <div class="image-center">
         <img src="../images/project3_3.png" alt="Project 3 afbeelding 3" />
       </div>
       <div class="image-center">
         <img src="../images/project3_4.png" alt="Project 3 afbeelding 4" />
+      </div>
+      <div class="project-textblock">
+        Het huis is doordacht ingeplant in het groene landschap, met respect voor privacy en oriëntatie. Zo ontstaat een duurzame gezinswoning die moeiteloos past in haar omgeving en uitnodigt tot samenleven, ontspannen en genieten van het buitenleven.
       </div>
       <div class="image-center">
         <img src="../images/project3_5.png" alt="Project 3 afbeelding 5" />
@@ -107,6 +188,28 @@
   <footer>
     &copy; Huis van Architectuur – Jarvin Horemans – Olen
   </footer>
+
+  <!-- Sticky header JS -->
+  <script>
+    const miniHeader = document.getElementById('miniHeader');
+    let lastScroll = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        if (window.scrollY < lastScroll) {
+          // Scrolling up: toon sticky mini-header
+          miniHeader.classList.add('visible');
+        } else {
+          // Scrolling down: verberg sticky mini-header
+          miniHeader.classList.remove('visible');
+        }
+      } else {
+        // Helemaal boven: verberg mini-header
+        miniHeader.classList.remove('visible');
+      }
+      lastScroll = window.scrollY;
+    });
+  </script>
 
 </body>
 </html>
