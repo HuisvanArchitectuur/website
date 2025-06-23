@@ -321,4 +321,53 @@ footer {
     max-height: 320px;
   }
 }
+/* Sticky Nav styles */
+#sticky-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.96);
+  border-bottom: 1px solid #222;
+  z-index: 9999;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0.7rem 2.5rem 0.7rem 2.5rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.13);
+  transition: transform 0.22s cubic-bezier(.32,1.01,.52,1.02);
+  transform: translateY(-100%);
+}
+#sticky-nav.show {
+  transform: translateY(0);
+}
+#sticky-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+#sticky-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s;
+  font-size: 1rem;
+}
+#sticky-nav ul li a:hover,
+#sticky-nav ul li a.active {
+  color: #42cfff;
+}
+@media (max-width: 768px) {
+  #sticky-nav {
+    padding: 0.6rem 1rem 0.6rem 1rem;
+    font-size: 0.95rem;
+  }
+  #sticky-nav ul {
+    gap: 1rem;
+  }
+}
 
