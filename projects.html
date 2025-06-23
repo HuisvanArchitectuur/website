@@ -5,6 +5,114 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projecten - Huis van Architectuur</title>
   <link rel="stylesheet" href="main.css" />
+  <style>
+    main {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+    main h1 {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid #fff;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+    .project-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      align-items: stretch;
+    }
+    .project-card-overlay {
+      position: relative;
+      width: 340px;
+      min-width: 260px;
+      max-width: 370px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.19);
+      background: #111;
+      transition: box-shadow 0.3s;
+      margin-bottom: 2rem;
+    }
+    .project-card-overlay a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+    }
+    .project-thumb {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.35s;
+    }
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s;
+      background: rgba(0,0,0,0.2);
+    }
+    .overlay-text {
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+      background: rgba(0,0,0,0.70);
+      border-radius: 8px;
+      opacity: 0.95;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+    .overlay-text h2 {
+      font-size: 1.22rem;
+      font-weight: bold;
+      margin-bottom: 0.7rem;
+      color: #fff;
+    }
+    .overlay-text p {
+      font-size: 1rem;
+      color: #eee;
+      margin-bottom: 0;
+    }
+    .project-card-overlay:hover .project-thumb,
+    .project-card-overlay:focus-within .project-thumb {
+      opacity: 0.3;
+    }
+    .project-card-overlay:hover .overlay,
+    .project-card-overlay:focus-within .overlay {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .project-card-overlay:active {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.30);
+    }
+    @media (max-width: 900px) {
+      .project-list {
+        flex-direction: column;
+        align-items: center;
+      }
+      .project-card-overlay {
+        width: 98vw;
+        max-width: 99vw;
+      }
+      .project-thumb {
+        height: 38vw;
+        min-height: 180px;
+        max-height: 320px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -23,27 +131,33 @@
   </header>
 
   <main>
-    <div class="content-box">
-      <h1>Onze projecten</h1>
-      <p>Een selectie van gerealiseerde en lopende projecten.</p>
-      <div class="project-card">
+    <h1>Onze projecten</h1>
+    <div class="project-list">
+      <!-- Project 1 -->
+      <div class="project-card-overlay">
         <a href="projecten/project1.html">
-          <img src="images/project1_5.jpg" alt="Moderne woning met zwembad" class="project-thumb" />
-          <div class="project-info">
-            <h2>Moderne eengezinswoning met poolhouse en zwembad</h2>
-            <p>Een open bebouwing in moderne stijl, voorzien van een open interieur met geïntegreerd zwembad en poolhouse.</p>
+          <img src="images/project1_1.jpg" alt="Moderne eengezinswoning met zwembad" class="project-thumb" />
+          <div class="overlay">
+            <div class="overlay-text">
+              <h2>Moderne eengezinswoning met zwembad</h2>
+              <p>Een open bebouwing in moderne stijl, voorzien van een ruimtelijk interieur, geïntegreerd zwembad en poolhouse.</p>
+            </div>
           </div>
         </a>
       </div>
-       <div class="project-card">
+      <!-- Project 2 -->
+      <div class="project-card-overlay">
         <a href="projecten/project2.html">
-          <img src="images/project2_2.png" alt="Moderne woning met zwembad" class="project-thumb" />
-          <div class="project-info">
-            <h2>Stijlvolle woning met bijgebouw</h2>
-            <p>Een stijlvolle woning in moderne stijl met bijgebouw.</p>
+          <img src="images/project2_1.jpg" alt="Stijlvolle pastorijwoning" class="project-thumb" />
+          <div class="overlay">
+            <div class="overlay-text">
+              <h2>Stijlvolle pastorijwoning met eiken bijgebouw</h2>
+              <p>Landelijke nieuwbouw in authentieke stijl, met ruim zicht op tuin en natuur.</p>
+            </div>
           </div>
         </a>
       </div>
+      <!-- Voeg hier extra projecten toe op exact dezelfde manier -->
     </div>
   </main>
 
