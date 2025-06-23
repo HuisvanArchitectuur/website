@@ -6,114 +6,142 @@
   <title>Onze projecten - Huis van Architectuur</title>
   <link rel="stylesheet" href="main.css" />
   <style>
-    .projects-main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 3rem 1rem 4rem 1rem;
-      min-height: 80vh;
+    main {
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding: 3rem 1rem 2rem 1rem;
+      min-height: 100vh;
     }
-    .projects-title {
-      font-size: 2.2rem;
-      font-weight: bold;
-      margin-bottom: 2.8rem;
-      text-align: center;
-      margin-top: 1.5rem;
+    h1 {
       color: #fff;
-      letter-spacing: 0.01em;
-      border-bottom: 2px solid #fff;
+      text-align: center;
+      font-size: 2.3rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+      margin-top: 1rem;
+      border-bottom: 3px solid #fff;
       display: inline-block;
-      padding-bottom: 0.2em;
+      padding-bottom: 0.3rem;
+      letter-spacing: 0.01em;
     }
     .project-list {
-      display: flex;
-      flex-direction: column;
-      gap: 3.5rem;
-      width: 100%;
-      align-items: center;
-    }
-    .project {
       width: 100%;
       max-width: 950px;
-      margin: 0 auto;
       display: flex;
       flex-direction: column;
+      gap: 3rem;
       align-items: center;
+    }
+    .project-card {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0;
+      background: none;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      transition: none;
+      position: relative;
     }
     .project-thumb-link {
       display: block;
-      width: 100%;
-      max-width: 950px;
-      text-align: center;
-      margin-bottom: 1.2rem;
-      transition: transform 0.15s;
-    }
-    .project-thumb-link:hover .project-thumb,
-    .project-thumb-link:focus .project-thumb {
-      opacity: 0.65;
-      transition: opacity 0.25s;
-      cursor: pointer;
+      transition: none;
     }
     .project-thumb {
       width: 100%;
-      max-width: 900px;
-      height: auto;
-      border-radius: 16px;
-      border: 1px solid #444;
-      box-shadow: 0 3px 20px rgba(0,0,0,0.10);
-      object-fit: cover;
-      background: #181818;
+      max-width: 750px;
+      border-radius: 14px;
+      box-shadow: 0 8px 36px rgba(0,0,0,0.19);
+      border: 1px solid #333;
+      margin-bottom: 1.3rem;
       display: block;
-      margin: 0 auto;
-      transition: opacity 0.25s;
+      margin-left: auto;
+      margin-right: auto;
+      transition: opacity 0.3s;
+    }
+    .project-thumb-link:hover .project-thumb,
+    .project-thumb-link:focus .project-thumb {
+      opacity: 0.62;
+      cursor: pointer;
     }
     .project-title {
       font-size: 1.4rem;
       font-weight: bold;
       color: #fff;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.4rem;
+      margin-top: 0.4rem;
       text-align: center;
-      margin-top: 0.3em;
     }
     .project-desc {
-      font-size: 1.09rem;
       color: #ccc;
+      font-size: 1.07rem;
       text-align: center;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.2rem;
+      margin-top: 0;
+      line-height: 1.7;
       font-weight: 400;
-      max-width: 750px;
     }
-    @media (max-width: 1000px) {
-      .project, .project-thumb-link, .project-thumb {
-        max-width: 99vw;
+    @media (max-width: 900px) {
+      .project-card, .project-thumb {
+        max-width: 98vw;
       }
       .project-thumb {
-        border-radius: 10px;
+        max-height: 330px;
+      }
+      h1 {
+        font-size: 1.3rem;
       }
     }
-    @media (max-width: 700px) {
-      .projects-main {
-        padding: 1.5rem 0.2rem 1.5rem 0.2rem;
-      }
-      .projects-title {
-        font-size: 1.2rem;
-      }
-      .project-title {
-        font-size: 1.08rem;
-      }
-      .project-desc {
-        font-size: 0.98rem;
-        max-width: 99vw;
-      }
-      .project-thumb {
-        max-width: 99vw;
-      }
+    /* Sticky mini-header */
+    .mini-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      background: rgba(15, 15, 15, 0.98);
+      border-bottom: 1px solid #333;
+      z-index: 1000;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0.8rem 2.2rem 0.8rem 2.2rem;
+      box-shadow: 0 2px 18px rgba(0,0,0,0.06);
+      transition: transform 0.24s;
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+    .mini-header.visible {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: all;
+    }
+    .mini-header nav ul {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+      margin: 0;
+    }
+    .mini-header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    .mini-header nav ul li a:hover,
+    .mini-header nav ul li a.active {
+      color: #aad5f4;
     }
   </style>
 </head>
 <body>
+
   <header>
     <div class="logo">
       <img src="images/Logo.png" alt="Logo Huis van Architectuur" />
@@ -128,25 +156,37 @@
     </nav>
   </header>
 
-  <main class="projects-main">
-    <span class="projects-title">Onze projecten</span>
+  <!-- Sticky mini-header -->
+  <div class="mini-header" id="miniHeader">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" class="active">Projecten</a></li>
+        <li><a href="about.html">Over ons</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+    <h1>Onze projecten</h1>
     <div class="project-list">
 
       <!-- Project 1 -->
-      <div class="project">
+      <div class="project-card">
         <a href="projecten/project1.html" class="project-thumb-link">
-          <img src="images/project1_1.jpg" alt="Moderne eengezinswoning met zwembad" class="project-thumb" />
+          <img src="images/project1_1.jpg" alt="Moderne eengezinswoning" class="project-thumb" />
         </a>
         <div class="project-title">Moderne eengezinswoning</div>
         <div class="project-desc">
-          Strakke lijnen, open ruimtes en naadloze dialoog met de omgeving.
+          Strakke lijnen, open ruimtes en een naadloze dialoog met de omgeving.
         </div>
       </div>
 
       <!-- Project 2 -->
-      <div class="project">
+      <div class="project-card">
         <a href="projecten/project2.html" class="project-thumb-link">
-          <img src="images/project2_1.png" alt="Stijlvolle pastorijwoning met eiken bijgebouw" class="project-thumb" />
+          <img src="images/project2_1.png" alt="Stijlvolle pastorijwoning" class="project-thumb" />
         </a>
         <div class="project-title">Stijlvolle pastorijwoning</div>
         <div class="project-desc">
@@ -155,13 +195,13 @@
       </div>
 
       <!-- Project 3 -->
-      <div class="project">
+      <div class="project-card">
         <a href="projecten/project3.html" class="project-thumb-link">
-          <img src="images/project3_1.png" alt="Project 3 titel" class="project-thumb" />
+          <img src="images/project3_1.png" alt="Strakke baksteenwoning" class="project-thumb" />
         </a>
-        <div class="project-title">Project 3 titel</div>
+        <div class="project-title">Strakke baksteenwoning</div>
         <div class="project-desc">
-          Korte omschrijving van project 3.
+          Eenvoud, robuustheid en heldere volumes – een tijdloze gezinswoning.
         </div>
       </div>
 
@@ -171,5 +211,24 @@
   <footer>
     &copy; Huis van Architectuur – Jarvin Horemans – Olen
   </footer>
+
+  <!-- Sticky header JS -->
+  <script>
+    const miniHeader = document.getElementById('miniHeader');
+    let lastScroll = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        if (window.scrollY < lastScroll) {
+          miniHeader.classList.add('visible');
+        } else {
+          miniHeader.classList.remove('visible');
+        }
+      } else {
+        miniHeader.classList.remove('visible');
+      }
+      lastScroll = window.scrollY;
+    });
+  </script>
 </body>
 </html>
